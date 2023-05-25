@@ -4,6 +4,7 @@ require('dotenv').config()
 const app = express()
 const cors = require("cors")
 const port = process.env.PORT || 3000
+const server = process.env.REACT_CLIENT
 
 // Page Home
 app.get("/", (req, res) => {
@@ -19,6 +20,6 @@ app.get("*", (req, res) => {
     res.send("Nhập Sai Đường Dẫn! Vui Lòng Nhập Lại >.<")
 });
 
-app.listen(port, () => {
+app.listen(server, () => {
     console.log(`Start server listen at ${port}`)
 });
